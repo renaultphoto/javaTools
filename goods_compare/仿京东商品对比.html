@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>京东对比点击按钮页</title>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <style>
+        *{padding: 0;margin: 0;}
+        body{font-family: "Microsoft YaHei", "微软雅黑", "Tahoma", "Helvetica";}
+        a{text-decoration: none;}
+        .duibi_a{width: 28px;height: 25px;line-height: 25px;border: 1px solid #DDD;padding: 0 3px 0 24px;position: relative;background: #fff;color: #999;text-decoration: none;font-size: 12px;display: inline-block;}
+        .duibi_a:hover{color: #e4393c;border-color: #e4393c;}
+        .duibi_a_click{color: #e4393c;}
+        .duibi_a i{left: 5px;top: 5px;background: url('images/search.ele.png') no-repeat 9999px 9999px;background-color: rgba(0, 0, 0, 0);display: inline-block;height: 12px;width: 12px;background-color: #fff;border: 1px solid #ccc;font-size: 0;position: absolute;transition: background-position .15s ease-in-out;}
+        .duibi_a:hover i{border-color: #e4393c;}
+        .duibi_a .i_click{border-color: #e4393c;background-position: -1px -107px;}
+        .pop-compare{width: 970px;height: 140px;background-color: #FFFFFF;position: fixed;bottom: 0;left: 50%;margin-left: -485px;z-index: 100;box-shadow: 0 0 15px rgba(221,221,221,.8);border:1px solid #DDDDDD;border-bottom-width: 0;}
+        .ui-switchable-item{position: relative;left: -1px;margin-top: -2px;height: 36px;background: #fff;border: 2px solid #7abd54;border-bottom: 0;color: #7abd54;text-decoration: none;display: inline-block;width: 84px;text-align: center;line-height: 36px;}
+        .tab-con{width: 968px;height: 103px;border: 2px solid #7abd54;margin-left: -1px;margin-top: -2px;}
+        .diff-items{padding: 6px;height: 91px;}
+        .item-empty{float: left;overflow: hidden;margin-right: 10px;padding: 17px 10px 12px 0;border-right: 1px dotted #7abd54;color: #CCCCCC;}
+        .item-empty dt {background: #f6f6f6;float: left;margin-right: 5px;width: 48px;height: 48px;text-align: center;color: #ccc;border: 1px solid #fff;font: 36px/48px arial;overflow: hidden;  }
+        .diff-items dd{float: left;width: 140px;font-size: 12px;}
+        .diff-operate{right: 14px;position: absolute;top: 60px;width: 85px;text-align: center;font-size: 12px;}
+        .btn-compare-b{text-decoration: none;display: block;width: 59px;height: 30px;font: 700 14px/30px verdana;margin-left: 13px;margin-bottom: 11px;border-radius: 3px;background: #fff;border: 1px solid #ddd;color: #ccc;cursor: default;}
+        .del-items{color: #005aa0;text-decoration: none;}
+        .diff-item-name{height: 3em;line-height: 1.5em;overflow: hidden;display: block;color: #333;font-size: 12px;}
+        .p-price{overflow: hidden;font-size: 12px;}
+        .J-p{color: #e4393c;font-weight: 400;font-family: Verdana;}
+        .del-comp-item{color: #005aa0;padding-left: 10px;}
+        .compare-active{border: none;color: #fff;background-color: #E74649;cursor: pointer;}
+        .duibi-div{width: 150px;height: 200px;border: 1px solid #DDDDDD;float: left;margin-right: 20px;margin-bottom: 20px;padding: 15px;}
+        .yichu-tip{display: none;height: 27px;margin-top: -29px;line-height: 27px;border: 1px solid #db9a9a;color: #c00;text-align: center;background: #ffe8e8;_margin-top: 0;font-size: 12px;}
+        .hide-me{font-size: 14px;color: #005aa0;position: absolute;right: 7px;top: 7px;}
+    </style>
+</head>
+<body>
+    <div style="width: 1010px;height: auto;margin: 20px auto;">
+        <div class="duibi-div" listId="1">
+            <img src="images/1.jpg" width="150" height="70">
+            <div style="font-size: 12px;color: #666;">联想1（Lenovo） IBM服务器X3650M5 8871i05 2U机架式主机 单颗2603V4 6核1.7G CPU  配单电源 标配(标机16G含300G 10K SAS硬盘)</div>
+            <a href="javascript:void(0);" class="duibi_a">
+                <i></i>对比
+            </a>
+        </div>
+        <div class="duibi-div" listId="2">
+            <img src="images/2.jpg" width="150" height="70">
+            <div style="font-size: 12px;color: #666;">联想2（Lenovo） IBM服务器X3650M5 8871i05 2U机架式主机 单颗2603V4 6核1.7G CPU  配单电源 标配(标机16G含300G 10K SAS硬盘)</div>
+            <a href="javascript:void(0);" class="duibi_a">
+                <i></i>对比
+            </a>
+        </div>
+        <div class="duibi-div" listId="3">
+            <img src="images/3.jpg" width="150" height="70">
+            <div style="font-size: 12px;color: #666;">联想3（Lenovo） IBM服务器X3650M5 8871i05 2U机架式主机 单颗2603V4 6核1.7G CPU  配单电源 标配(标机16G含300G 10K SAS硬盘)</div>
+            <a href="javascript:void(0);" class="duibi_a">
+                <i></i>对比
+            </a>
+        </div>
+        <div class="duibi-div" listId="4">
+            <img src="images/4.jpg" width="150" height="70">
+            <div style="font-size: 12px;color: #666;">联想4（Lenovo） IBM服务器X3650M5 8871i05 2U机架式主机 单颗2603V4 6核1.7G CPU  配单电源 标配(标机16G含300G 10K SAS硬盘)</div>
+            <a href="javascript:void(0);" class="duibi_a">
+                <i></i>对比
+            </a>
+        </div>
+        <div class="duibi-div" listId="5">
+            <img src="images/5.jpg" width="150" height="70">
+            <div style="font-size: 12px;color: #666;">联想5（Lenovo） IBM服务器X3650M5 8871i05 2U机架式主机 单颗2603V4 6核1.7G CPU  配单电源 标配(标机16G含300G 10K SAS硬盘)</div>
+            <a href="javascript:void(0);" class="duibi_a">
+                <i></i>对比
+            </a>
+        </div>
+        <div class="duibi-div" listId="6">
+            <img src="images/6.jpg" width="150" height="70">
+            <div style="font-size: 12px;color: #666;">联想6（Lenovo） IBM服务器X3650M5 8871i05 2U机架式主机 单颗2603V4 6核1.7G CPU  配单电源 标配(标机16G含300G 10K SAS硬盘)</div>
+            <a href="javascript:void(0);" class="duibi_a">
+                <i></i>对比
+            </a>
+        </div>
+        <div class="duibi-div" listId="7">
+            <img src="images/7.jpg" width="150" height="70">
+            <div style="font-size: 12px;color: #666;">联想7（Lenovo） IBM服务器X3650M5 8871i05 2U机架式主机 单颗2603V4 6核1.7G CPU  配单电源 标配(标机16G含300G 10K SAS硬盘)</div>
+            <a href="javascript:void(0);" class="duibi_a">
+                <i></i>对比
+            </a>
+        </div>
+        <div class="duibi-div" listId="8">
+            <img src="images/8.jpg" width="150" height="70">
+            <div style="font-size: 12px;color: #666;">联想8（Lenovo） IBM服务器X3650M5 8871i05 2U机架式主机 单颗2603V4 6核1.7G CPU  配单电源 标配(标机16G含300G 10K SAS硬盘)</div>
+            <a href="javascript:void(0);" class="duibi_a">
+                <i></i>对比
+            </a>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div class="pop-compare">
+        <P class="yichu-tip">列表里已经满了，要不然把不想对比的删了重新添加</P>
+        <a href="javascript:void(0);" class="ui-switchable-item">对比栏</a>
+        <a href="javascript:;" class="hide-me">隐藏</a>
+        <div class="tab-con">
+            <div class="diff-items">
+                <dl class="item-empty">
+                    <dt>1</dt>
+                    <dd>您还可以继续添加</dd>
+                </dl>
+                <!--<dl class="item-empty">
+                    <dt><a href="javascript:void(0);"><img src="images/logo.png" width="50" height="50"></a></dt>
+                    <dd>
+                        <a href="javascript:void(0);" class="diff-item-name">联想（Lenovo） IBM服务器X3650M5 8871i05 2U机架式主机 单颗2603V4 6核1.7G CPU  配单电源 标配(标机16G含300G 10K SAS硬盘)</a>
+                        <span class="p-price">
+                            <strong class="J-p">￥16688.00</strong>
+                            <a href="javascript:void(0);" class="del-comp-item">删除</a>
+                        </span>
+                    </dd>
+                </dl>-->
+                <dl class="item-empty">
+                    <dt>2</dt>
+                    <dd>您还可以继续添加</dd>
+                </dl>
+                <dl class="item-empty">
+                    <dt>3</dt>
+                    <dd>您还可以继续添加</dd>
+                </dl>
+                <dl class="item-empty">
+                    <dt>4</dt>
+                    <dd>您还可以继续添加</dd>
+                </dl>
+            </div>
+            <div class="diff-operate">
+                <a href="javascript:void(0);" class="btn-compare-b compare-active">对比</a>
+                <a href="javascript:void(0);" class="del-items" onclick="empty();">清空对比栏</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+    <script>
+        /*
+        * 定义数组
+        * */
+        var ids = new Array();
+        var images = new Array();
+        var names = new Array();
+        var prices = new Array();//价格数组
+        /*
+        * 用于查找指定元素在数组中的位置
+        * */
+        Array.prototype.indexOf= function(val){
+            for(var i = 0; i < this.length; i++){
+                if(this[i] == val) return i;
+            }
+            return -1;
+        }
+        /*
+        * 通过得到的索引删除指定元素
+        * */
+        Array.prototype.remove = function(val){
+            var index = this.indexOf(val);
+            if(index > -1){
+                this.splice(index,1);
+            }
+        }
+        /*
+        * 删除对比栏中的对比商品
+        * */
+        function deleteList(element){
+            var thisId = $(element).parents('dl.item-empty').attr('id');
+            var thisImage = $(element).parents('dl.item-empty').find('img').attr('src');
+            var thisName = $(element).parents('dl.item-empty').find('a.diff-item-name').text();
+            $('div.duibi-div').each(function(){
+                var listId = $(this).attr('listId');
+                if(listId == thisId){
+                    $(this).find('a.duibi_a').removeClass('duibi_a_click');
+                    $(this).find('i').removeClass('i_click');
+                }
+            });
+            var indexId = ids.indexOf(thisId);
+            ids.remove(thisId);
+            images.splice(indexId,1);
+            names.splice(indexId,1);
+            var length = ids.length;//获取数组的长度
+            for(var i = 0; i < length; i++){
+                var str = '';
+                str += '<dt><a href="javascript:void(0);"><img src="' + images[i] + '" width="50" height="50"></a></dt>';
+                str += '<dd>';
+                str += '<a href="javascript:void(0);" class="diff-item-name">' + names[i] + '</a>';
+                str += '<span class="p-price">';
+                str += '<strong class="J-p">￥16688.00</strong>';
+                str += '<a href="javascript:void(0);" class="del-comp-item" onclick="deleteList(this);">删除</a>';
+                str += '</span>';
+                str += '</dd>';
+                $('dl.item-empty').eq(i).attr('id',ids[i]);
+                $('dl.item-empty').eq(i).html(str);
+            }
+            for(var i = 3; i >= length; i--){
+                var index = i + 1;
+                var str = '';
+                str += '<dt>'+ index +'</dt>';
+                str += '<dd>您还可以继续添加</dd>';
+                $('dl.item-empty').eq(i).attr('id','');
+                $('dl.item-empty').eq(i).html(str);
+            }
+        }
+        /*
+        * 清空对比栏
+        * */
+        function empty(){
+            $('a.duibi_a').removeClass('duibi_a_click');
+            $('a.duibi_a').find('i').removeClass('i_click');
+            ids = [];
+            images = [];
+            names = [];
+            prices = [];
+            var length = ids.length;//获取数组的长度
+            for(var i = 0; i < length; i++){
+                var str = '';
+                str += '<dt><a href="javascript:void(0);"><img src="' + images[i] + '" width="50" height="50"></a></dt>';
+                str += '<dd>';
+                str += '<a href="javascript:void(0);" class="diff-item-name">' + names[i] + '</a>';
+                str += '<span class="p-price">';
+                str += '<strong class="J-p">￥16688.00</strong>';
+                str += '<a href="javascript:void(0);" class="del-comp-item" onclick="deleteList(this);">删除</a>';
+                str += '</span>';
+                str += '</dd>';
+                $('dl.item-empty').eq(i).attr('id',ids[i]);
+                $('dl.item-empty').eq(i).html(str);
+            }
+            for(var i = 3; i >= length; i--){
+                var index = i + 1;
+                var str = '';
+                str += '<dt>'+ index +'</dt>';
+                str += '<dd>您还可以继续添加</dd>';
+                $('dl.item-empty').eq(i).attr('id','');
+                $('dl.item-empty').eq(i).html(str);
+            }
+        }
+        $(function(){
+            $('a.duibi_a').click(function(){
+                $('div.pop-compare').css('display','block');//显示下方对比框
+                var id = $(this).parent().attr('listId');//获取点击商品的id
+                var image = $(this).parent().find('img').attr('src');//获取点击商品的图片
+                var name = $(this).parent().find('div').text();//获取点击商品的名称
+                //var price;//获取点击商品的价格
+                var isClass = $(this).is('.duibi_a_click');
+                if(!isClass){
+                    $(this).addClass('duibi_a_click');
+                    $(this).find('i').addClass('i_click');
+                    ids.push(id);
+                    images.push(image);
+                    names.push(name);
+                    var length = ids.length;//获取数组的长度
+                    if(length <= 4){
+                        for(var i = 0; i < length; i++){
+                            var str = '';
+                            str += '<dt><a href="javascript:void(0);"><img src="' + images[i] + '" width="50" height="50"></a></dt>';
+                            str += '<dd>';
+                            str += '<a href="javascript:void(0);" class="diff-item-name">' + names[i] + '</a>';
+                            str += '<span class="p-price">';
+                            str += '<strong class="J-p">￥16688.00</strong>';
+                            str += '<a href="javascript:void(0);" class="del-comp-item" onclick="deleteList(this);">删除</a>';
+                            str += '</span>';
+                            str += '</dd>';
+                            $('dl.item-empty').eq(i).attr('id',ids[i]);
+                            $('dl.item-empty').eq(i).html(str);
+                        }
+                    }else if(length > 4){
+                        $('p.yichu-tip').css('display','block');
+                        $(this).removeClass('duibi_a_click');
+                        $(this).find('i').removeClass('i_click');
+                        ids.pop();
+                        images.pop();
+                        names.pop();
+                    }
+                }else{
+                    $('p.yichu-tip').css('display','none');
+                    $(this).removeClass('duibi_a_click');
+                    $(this).find('i').removeClass('i_click');
+                    var indexId = ids.indexOf(id);
+                    ids.remove(id);
+                    images.splice(indexId,1);
+                    names.splice(indexId,1);
+                    var length = ids.length;//获取数组的长度
+                    for(var i = 0; i < length; i++){
+                        var str = '';
+                        str += '<dt><a href="javascript:void(0);"><img src="' + images[i] + '" width="50" height="50"></a></dt>';
+                        str += '<dd>';
+                        str += '<a href="javascript:void(0);" class="diff-item-name">' + names[i] + '</a>';
+                        str += '<span class="p-price">';
+                        str += '<strong class="J-p">￥16688.00</strong>';
+                        str += '<a href="javascript:void(0);" class="del-comp-item" onclick="deleteList(this);">删除</a>';
+                        str += '</span>';
+                        str += '</dd>';
+                        $('dl.item-empty').eq(i).attr('id',ids[i]);
+                        $('dl.item-empty').eq(i).html(str);
+                    }
+                    for(var i = 3; i >= length; i--){
+                        var index = i + 1;
+                        var str = '';
+                        str += '<dt>'+ index +'</dt>';
+                        str += '<dd>您还可以继续添加</dd>';
+                        $('dl.item-empty').eq(i).attr('id','');
+                        $('dl.item-empty').eq(i).html(str);
+                    }
+                }
+            });
+
+            $('a.hide-me').click(function(){
+                $('div.pop-compare').css('display','none');
+            });
+
+        });
+    </script>
+</body>
+</html>

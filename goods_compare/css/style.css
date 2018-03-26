@@ -1,0 +1,28 @@
+	
+*{padding: 0;margin: 0;}
+body{font-family: "Microsoft YaHei", "微软雅黑", "Tahoma", "Helvetica";}
+a{text-decoration: none;}
+.duibi_a{width: 28px;height: 25px;line-height: 25px;border: 1px solid #DDD;padding: 0 3px 0 24px;position: relative;background: #fff;color: #999;text-decoration: none;font-size: 12px;display: inline-block;}
+.duibi_a:hover{color: #e4393c;border-color: #e4393c;}
+.duibi_a_click{color: #e4393c;}
+.duibi_a i{left: 5px;top: 5px;background: url('../images/search.ele.png') no-repeat 9999px 9999px;background-color: rgba(0, 0, 0, 0);display: inline-block;height: 12px;width: 12px;background-color: #fff;border: 1px solid #ccc;font-size: 0;position: absolute;transition: background-position .15s ease-in-out;}
+.duibi_a:hover i{border-color: #e4393c;}
+.duibi_a .i_click{border-color: #e4393c;background-position: -1px -107px;}
+.pop-compare{width: 970px;height: 140px;background-color: #FFFFFF;position: fixed;bottom: 0;left: 50%;margin-left: -485px;z-index: 100;box-shadow: 0 0 15px rgba(221,221,221,.8);border:1px solid #DDDDDD;border-bottom-width: 0;}
+.ui-switchable-item{position: relative;left: -1px;margin-top: -2px;height: 36px;background: #fff;border: 2px solid #7abd54;border-bottom: 0;color: #7abd54;text-decoration: none;display: inline-block;width: 84px;text-align: center;line-height: 36px;}
+.tab-con{width: 968px;height: 103px;border: 2px solid #7abd54;margin-left: -1px;margin-top: -2px;}
+.diff-items{padding: 6px;height: 91px;}
+.item-empty{float: left;overflow: hidden;margin-right: 10px;padding: 17px 10px 12px 0;border-right: 1px dotted #7abd54;color: #CCCCCC;}
+.item-empty dt {background: #f6f6f6;float: left;margin-right: 5px;width: 48px;height: 48px;text-align: center;color: #ccc;border: 1px solid #fff;font: 36px/48px arial;overflow: hidden;  }
+.diff-items dd{float: left;width: 140px;font-size: 12px;}
+.diff-operate{right: 14px;position: absolute;top: 60px;width: 85px;text-align: center;font-size: 12px;}
+.btn-compare-b{text-decoration: none;display: block;width: 59px;height: 30px;font: 700 14px/30px verdana;margin-left: 13px;margin-bottom: 11px;border-radius: 3px;background: #fff;border: 1px solid #ddd;color: #ccc;cursor: default;}
+.del-items{color: #005aa0;text-decoration: none;}
+.diff-item-name{height: 3em;line-height: 1.5em;overflow: hidden;display: block;color: #333;font-size: 12px;}
+.p-price{overflow: hidden;font-size: 12px;}
+.J-p{color: #e4393c;font-weight: 400;font-family: Verdana;}
+.del-comp-item{color: #005aa0;padding-left: 10px;}
+.compare-active{border: none;color: #fff;background-color: #E74649;cursor: pointer;}
+.duibi-div{width: 150px;height: 200px;border: 1px solid #DDDDDD;float: left;margin-right: 20px;margin-bottom: 20px;padding: 15px;}
+.yichu-tip{display: none;height: 27px;margin-top: -29px;line-height: 27px;border: 1px solid #db9a9a;color: #c00;text-align: center;background: #ffe8e8;_margin-top: 0;font-size: 12px;}
+.hide-me{font-size: 14px;color: #005aa0;position: absolute;right: 7px;top: 7px;}
